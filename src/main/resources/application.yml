@@ -1,0 +1,17 @@
+spring.application.name: profile matcher
+
+
+management:
+    tracing:
+        propagation.type: b3_multi
+        enabled: true
+
+logging.pattern.level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+spring.data.mongodb:
+    host: localhost
+    port: 27017
+    database: profile_matcher
+    username: user
+    password: password
+    authentication-database: admin
